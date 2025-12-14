@@ -1,0 +1,123 @@
+/* Header Component Styles */
+
+.header {
+    background: white;
+    border-bottom: 1px solid var(--gray-200);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+}
+
+.headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoLink {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    transition: all var(--transition-base);
+}
+
+.logoLink:hover {
+    transform: translateY(-2px);
+}
+
+.logo {
+    border-radius: var(--radius-md);
+    transition: transform var(--transition-base);
+}
+
+.logoLink:hover .logo {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+.brandName {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-500), var(--secondary-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all var(--transition-base);
+}
+
+.logoLink:hover .brandName {
+    background: linear-gradient(135deg, var(--primary-700), var(--secondary-700));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav a {
+    color: var(--gray-700);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+    position: relative;
+}
+
+.nav a:not(:last-child):hover {
+    color: var(--primary-500);
+}
+
+.nav a:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-500);
+    transition: width var(--transition-base);
+}
+
+.nav a:not(:last-child):hover::after {
+    width: 100%;
+}
+
+.authOnly {
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav {
+        gap: 1rem;
+    }
+
+    .nav a:not(:last-child) {
+        display: none;
+    }
+
+    .brandName {
+        font-size: 1.25rem;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0.75rem 0;
+    }
+
+    .brandName {
+        font-size: 1.125rem;
+    }
+}

@@ -1,0 +1,445 @@
+ .page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary-50), var(--secondary-50));
+ }
+
+ .main {
+  padding: 6rem 0 3rem;
+ }
+
+ .headerRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+ }
+
+ .title {
+  margin: 0;
+ }
+
+ .backLink {
+  font-weight: 600;
+ }
+
+ .grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 1.5rem;
+ }
+
+ .servicesPanel,
+ .detailsPanel {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: 1.25rem;
+ }
+
+ .panelTitle {
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 1rem;
+ }
+
+ .loading,
+ .empty {
+  color: var(--gray-600);
+ }
+
+ .servicesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+ }
+
+ .serviceItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 0.9rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-align: left;
+ }
+
+ .serviceItem:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+ }
+
+ .serviceItemSelected {
+  background: rgba(44, 95, 124, 0.08);
+  border-color: rgba(44, 95, 124, 0.35);
+ }
+
+ .serviceItemLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+ }
+
+ .serviceIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  box-shadow: var(--shadow-sm);
+  font-size: 1.25rem;
+ }
+
+ .serviceName {
+  font-weight: 700;
+  color: var(--gray-900);
+ }
+
+ .serviceMeta {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+ }
+
+ .servicePrice {
+  font-weight: 800;
+  color: var(--accent-600);
+ }
+
+ .detailsCard {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: 1rem;
+ }
+
+ .detailsHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+ }
+
+ .detailsName {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+ }
+
+ .detailsDesc {
+  color: var(--gray-600);
+ }
+
+ .detailsPrice {
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: var(--accent-600);
+  white-space: nowrap;
+ }
+
+ .formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+ }
+
+ .field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+ }
+
+ .fieldFull {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+ }
+
+ .label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--gray-700);
+ }
+
+ .input,
+ .textarea {
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color var(--transition-fast);
+ }
+
+ .input:focus,
+ .textarea:focus {
+  border-color: var(--primary-500);
+ }
+
+ .summaryRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+ }
+
+ .summaryText {
+  display: flex;
+  flex-direction: column;
+ }
+
+ .summaryTitle {
+  font-weight: 800;
+  color: var(--gray-900);
+ }
+
+ .summaryValue {
+  color: var(--accent-600);
+  font-weight: 900;
+  font-size: 1.125rem;
+ }
+
+ .success {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  background: rgba(72, 187, 120, 0.12);
+  border: 1px solid rgba(72, 187, 120, 0.35);
+  color: var(--success-dark);
+  font-weight: 700;
+ }
+
+ .authModalOverlay,
+ .confirmModalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 2200;
+ }
+
+ .authModal,
+ .confirmModal {
+  width: 100%;
+  max-width: 560px;
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-2xl);
+  padding: 2rem;
+ }
+
+ .authModalTitle,
+ .confirmModalTitle {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--gray-900);
+ }
+
+ .authModalText {
+  margin: 0 0 1.5rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+ }
+
+ .authModalActions,
+ .confirmActions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+ }
+
+ .confirmBody {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+ }
+
+ .confirmRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.4rem 0;
+ }
+
+ .confirmLabel {
+  color: var(--gray-600);
+  font-weight: 700;
+ }
+
+ .confirmValue {
+  color: var(--gray-900);
+  font-weight: 800;
+ }
+
+ .confirmPrice {
+  color: var(--accent-600);
+  font-weight: 900;
+ }
+
+ .yapeModalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 2300;
+ }
+
+ .yapeModal {
+  width: 100%;
+  max-width: 980px;
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-2xl);
+  padding: 2rem;
+ }
+
+ .yapeTitle {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--gray-900);
+ }
+
+ .yapeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+ }
+
+ .yapeQrCard,
+ .yapeFormCard {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: 1rem;
+ }
+
+ .yapeQrTitle {
+  font-weight: 900;
+  color: var(--gray-900);
+  margin-bottom: 0.75rem;
+ }
+
+ .yapeQrImage {
+  width: 240px;
+  height: 240px;
+  border-radius: var(--radius-lg);
+  background: white;
+  border: 1px solid var(--gray-200);
+  display: block;
+ }
+
+ .yapeReceiver {
+  margin-top: 0.75rem;
+  color: var(--gray-700);
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+ }
+
+ .yapeAmount {
+  color: var(--accent-600);
+ }
+
+ .yapeHint {
+  margin-top: 0.75rem;
+  color: var(--gray-600);
+  font-size: 0.95rem;
+ }
+
+ .yapeField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+ }
+
+ .yapeLabel {
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: var(--gray-700);
+ }
+
+ .yapeInput {
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  font-size: 1rem;
+  outline: none;
+ }
+
+ .yapeInput:focus {
+  border-color: var(--primary-500);
+ }
+
+ .yapeFile {
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  padding: 0.65rem;
+  background: white;
+ }
+
+ .voucherPreview {
+  margin-top: 0.75rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+  background: white;
+ }
+
+ .voucherPreview img {
+  display: block;
+  width: 100%;
+  height: auto;
+ }
+
+ .paymentError {
+  margin: 0.5rem 0 1rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  background: rgba(245, 101, 101, 0.12);
+  border: 1px solid rgba(245, 101, 101, 0.35);
+  color: var(--error-dark);
+  font-weight: 700;
+ }
+
+ .yapeActions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+ }
+
+ .yapeFooterNote {
+  margin-top: 0.75rem;
+  color: var(--gray-600);
+ }
+
+ @media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yapeGrid {
+    grid-template-columns: 1fr;
+  }
+ }

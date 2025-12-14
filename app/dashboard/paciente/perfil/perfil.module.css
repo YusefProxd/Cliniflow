@@ -1,0 +1,321 @@
+/* Perfil Paciente Styles */
+
+.container {
+    min-height: 100vh;
+    background: var(--gray-50);
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 1.25rem;
+    color: var(--gray-600);
+}
+
+/* Header */
+.header {
+    background: white;
+    border-bottom: 1px solid var(--gray-200);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+}
+
+.headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoSection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-decoration: none;
+}
+
+.logoSection:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+.logoSection:hover .brandName {
+    color: var(--primary-700);
+}
+
+.logo {
+    border-radius: var(--radius-md);
+}
+
+.brandName {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-500);
+}
+
+.backLink {
+    color: var(--primary-500);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.backLink:hover {
+    color: var(--primary-700);
+}
+
+/* Main Content */
+.main {
+    padding: 2rem 0 4rem;
+}
+
+.pageHeader {
+    margin-bottom: 2rem;
+}
+
+.pageTitle {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+}
+
+.pageSubtitle {
+    font-size: 1.125rem;
+    color: var(--gray-600);
+    margin: 0;
+}
+
+/* Alerts */
+.errorAlert {
+    background: var(--error-light);
+    border: 1px solid var(--error);
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.errorIcon {
+    font-size: 1.5rem;
+}
+
+.errorAlert p {
+    color: var(--error-dark);
+    margin: 0;
+    font-weight: 500;
+}
+
+.successAlert {
+    background: var(--success-light);
+    border: 1px solid var(--success);
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.successIcon {
+    font-size: 1.5rem;
+}
+
+.successAlert p {
+    color: var(--success-dark);
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Form */
+.form {
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.formSection {
+    padding: 2rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.formSection:last-of-type {
+    border-bottom: none;
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 1.5rem;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formGroup label {
+    font-weight: 600;
+    color: var(--gray-700);
+    font-size: 0.9375rem;
+}
+
+.input,
+.select {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+    background: white;
+}
+
+.input:focus,
+.select:focus {
+    outline: none;
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 3px var(--primary-100);
+}
+
+.input:disabled {
+    background: var(--gray-100);
+    color: var(--gray-500);
+    cursor: not-allowed;
+}
+
+.helpText {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+    font-style: italic;
+}
+
+/* Alergias */
+.alergiaInput {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.alergiaInput .input {
+    flex: 1;
+}
+
+.addBtn {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-500);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    white-space: nowrap;
+}
+
+.addBtn:hover {
+    background: var(--primary-600);
+    transform: translateY(-1px);
+}
+
+.alergiaTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.alergiaTag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--primary-100);
+    color: var(--primary-700);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.removeTag {
+    background: none;
+    border: none;
+    color: var(--primary-700);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 0.25rem;
+    transition: color var(--transition-fast);
+}
+
+.removeTag:hover {
+    color: var(--error);
+}
+
+/* Form Actions */
+.formActions {
+    padding: 2rem;
+    background: var(--gray-50);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .formGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .formSection {
+        padding: 1.5rem;
+    }
+
+    .formActions {
+        padding: 1.5rem;
+        flex-direction: column-reverse;
+    }
+
+    .formActions .btn {
+        width: 100%;
+    }
+
+    .alergiaInput {
+        flex-direction: column;
+    }
+
+    .addBtn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .headerContent {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .backLink {
+        width: 100%;
+        justify-content: center;
+    }
+}
